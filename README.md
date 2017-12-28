@@ -1,34 +1,32 @@
 ### Introduction
-> A full stack react initial project for testing, using cases, or project template.But it dose not include whole react family, eg: redux/mobx.I hope you choose the right one.
-
-At first, the repository was designed to start quickly a react project to test funture. Now, it's an all-around development template about react.It uses the following technology stacks.
+react & mobx usage
 
 ### Scripts
 #### prepare
 
 ```
-git clone https://github.com/sunyongjian/react-full-start.git
+git clone git@github.com:sunyongjian/mobx-usage.git
 
 yarn/ npm install
 ```
 
 #### dev
 
-`
-npm run dll
-`
+```
+yarn run dll
+```
 
-`
-npm start
-`
+```
+yarn start
+```
 #### prod
-`
-npm run builddll
-`
+```
+yarn run builddll
+```
 
-`
-npm run build
-`
+```
+yarn run build
+```
 
 ### Tech Stacks
 
@@ -39,6 +37,7 @@ npm run build
 - [x] Webpack2
 - [x] Yarn
 - [x] Node/Express
+- [x] Mobx
 
 ### Feature
 It will support some of the features used in development or production environments.
