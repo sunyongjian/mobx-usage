@@ -1,18 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-import A from './a';
+import { Provider } from 'mobx-react';
+import App from './app';
+import stores from './store';
 import './index.less';
 
-const App = () => (
-  <div>
-    <img src={require('./logo.svg')} alt="logo" />
-    <h2>welcome to react-full-start</h2>
-    <A />
-  </div>
-);
+const Root = () => (<Provider {...stores}>
+  <App />
+</Provider>);
 
 if (module.hot) { // hmr necessary
   module.hot.accept();
 }
 
-render(<App />, document.getElementById('root'));
+render(<Root />, document.getElementById('root'));
