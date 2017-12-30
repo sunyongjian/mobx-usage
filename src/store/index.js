@@ -1,5 +1,6 @@
-import listStore from './list';
+import commonStore from './common';
+
 
 export default{
-  listStore,
+  commonStore,
 };

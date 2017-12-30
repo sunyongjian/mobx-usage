@@ -1,12 +1,16 @@
 import React from 'react';
-import A from './a';
+import List from './components/list';
+import Count from './components/count';
+import Info from './components/info';
 
 
 const App = () => (
   <div>
     <img src={require('./logo.svg')} alt="logo" />
-    <h2>welcome to react-full-start</h2>
-    <A />
+    <Count />
+    <div style={{ border: '1px solid #ccc', margin: '20px 0' }} />
+    <Info />
+    <List />
   </div>
 );
 

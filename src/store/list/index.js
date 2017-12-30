@@ -14,12 +14,13 @@ class ListStore {
     dataSource: [],
   }
 
-  @action fetchList = async () => {
+  @action fetchList = async (query) => {
     this.list.loading = true;
     const result = await axios({
       method: 'get',
       url: this.constructor.url,
       responseType: 'json',
+      params: query,
     }).then((res) => {
       if (res.status === 200) {
         return res;

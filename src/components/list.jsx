@@ -1,11 +1,11 @@
 import React from 'react';
 import { toJS } from 'mobx';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { Table } from 'antd';
+import listStore from '../store/list';
 
-@inject('listStore')
 @observer
-export default class A extends React.PureComponent {
+export default class List extends React.PureComponent {
 
   constructor() {
     super();
@@ -14,14 +14,17 @@ export default class A extends React.PureComponent {
     };
   }
   componentDidMount() {
-    const { listStore } = this.props;
     listStore.fetchList();
   }
 
+  onChange = query => {
+    listStore.fetchList(query);
+  }
+
   render() {
-    const { list } = this.props.listStore;
-    console.log(toJS(list), 'list');
+    const { list } = listStore;
     return (<Table
+      onChange={this.onChange}
       columns={[{
         title: '姓名',
         dataIndex: 'name',
@@ -31,9 +34,9 @@ export default class A extends React.PureComponent {
         dataIndex: 'age',
         key: 'age',
       }, {
-        title: '住址',
-        dataIndex: 'address',
-        key: 'address',
+        title: '邮箱',
+        dataIndex: 'email',
+        key: 'email',
       }]}
       {...toJS(list)}
     />);

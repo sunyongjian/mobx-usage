@@ -1,11 +1,11 @@
 { 
-  "list|1-10": [
+  "list|8-20": [
     {
       "id|+1": 1,
-      "name": "hh",
+      "name": "@name",
       "key|+1": 1,
       "age|12-22": 12,
-      "address": "bj"
+      "email": "@email"
     }
   ]
 }
