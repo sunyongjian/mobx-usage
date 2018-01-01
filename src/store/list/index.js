@@ -14,8 +14,17 @@ class ListStore {
     dataSource: [],
   }
 
+  @action toggleLoading = () => {
+    this.list.loading = !this.list.loading;
+  }
+
+  @action setList = (data) => {
+    this.list.dataSource = data.list;
+    this.list.pagination.total = data.length;
+  }
+
   @action fetchList = async (query) => {
-    this.list.loading = true;
+    this.toggleLoading();
     const result = await axios({
       method: 'get',
       url: this.constructor.url,
@@ -30,9 +39,8 @@ class ListStore {
 
     if (result) {
       const { data } = result;
-      this.list.loading = false;
-      this.list.dataSource = data.list;
-      this.list.pagination.total = data.length;
+      this.toggleLoading();
+      this.setList(data);
     }
   }
 }
