@@ -5,7 +5,7 @@ react & mobx usage
 #### prepare
 
 ```
-git clone git@github.com:sunyongjian/mobx-usage.git
+git clone https://github.com/sunyongjian/mobx-usage.git
 
 yarn/ npm install
 ```
