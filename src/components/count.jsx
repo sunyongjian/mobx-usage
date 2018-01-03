@@ -1,5 +1,6 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
+import { Button } from 'antd';
 
 @inject('commonStore')
 @observer
@@ -8,18 +9,17 @@ export default class Count extends React.PureComponent {
   render() {
     const { decreaseCount, increaseCount } = this.props.commonStore;
     return (<div>
-      <div
-        style={{ cursor: 'pointer' }}
+      操作组件 count：
+      <Button
         onClick={() => increaseCount()}
       >
         +
-      </div>
-      <div
-        style={{ cursor: 'pointer' }}
+      </Button>
+      <Button
         onClick={() => decreaseCount()}
       >
         -
-      </div>
+      </Button>
     </div>);
   }
 }

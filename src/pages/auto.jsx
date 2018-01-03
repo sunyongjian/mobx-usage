@@ -14,18 +14,20 @@ export default class Auto extends React.Component {
     const disposer = autorun(() => {
       if (this.isError) {
         notification.error({
-          message: '有错误',
-          description: '这是错误提示',
+          message: 'autoRun 执行了',
         });
         setTimeout(() => {
           disposer();// 销毁 autorun
+          notification.error({
+            message: 'autoRun 销毁',
+          });
         }, 2000);
       }
     });
     when(// 一旦
       () => !this.isError,
       () => {
-        notification.success({ message: '没有错误', description: '没有错误' });
+        notification.success({ message: 'when 执行' });
       },
     );
   }

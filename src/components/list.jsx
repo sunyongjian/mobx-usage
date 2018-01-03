@@ -31,7 +31,7 @@ export default class List extends React.PureComponent {
     const { list } = listStore;
     console.log(toJS(list), 'toJS(list)');
     return (
-      <div style={{ width: 500 }}>
+      <div>
         <Table
           onChange={this.onChange}
           columns={[{

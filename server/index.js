@@ -32,6 +32,10 @@ app.use(require("webpack-hot-middleware")(compiler, {
   path: '/__webpack_hmr',
 }));
 
+app.use('/favicon.ico', (req, res) => {
+  res.send('f');
+})
+
 if (host !== 'localhost') {// proxy
   const { host: hostConfig } = config.proxy;
   const cfg = hostConfig[host];
