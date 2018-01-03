@@ -4,6 +4,11 @@ class CommonStore {
 
   @observable info = {
     count: 1,
+    a: {
+      b: {
+        c: 2,
+      },
+    },
   }
 
   @action increaseCount = () => {
@@ -15,6 +20,10 @@ class CommonStore {
       return;
     }
     this.info.count -= 1;
+  }
+
+  @action deepChange = () => {
+    this.info.a.b.c = 4;
   }
 }
 

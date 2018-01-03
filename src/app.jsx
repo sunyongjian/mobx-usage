@@ -1,8 +1,6 @@
 import React from 'react';
 import DevTools from 'mobx-react-devtools';
-import List from './components/list';
-import Count from './components/count';
-import Info from './components/info';
+import Routes from './routes';
 
 const App = () => {
   let devTools;
@@ -11,11 +9,7 @@ const App = () => {
   }
   return (
     <div>
-      <img src={require('./logo.svg')} alt="logo" />
-      <Count />
-      <div style={{ border: '1px solid #ccc', margin: '20px 0' }} />
-      <Info />
-      <List />
+      <Routes />
       {devTools}
     </div>
   );

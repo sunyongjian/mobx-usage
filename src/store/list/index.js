@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, computed } from 'mobx';
 import axios from 'axios';
 
 class ListStore {
@@ -21,6 +21,10 @@ class ListStore {
   @action setList = (data) => {
     this.list.dataSource = data.list;
     this.list.pagination.total = data.length;
+  }
+
+  @action changeDataSource = () => {
+    this.list.dataSource[0].name = 'abc';
   }
 
   @action fetchList = async (query) => {
