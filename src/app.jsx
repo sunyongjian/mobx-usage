@@ -14,6 +14,7 @@ const App = () => {
         <li><Link to="/">/</Link></li>
         <li><Link to="/auto">/auto</Link></li>
         <li><Link to="/list">/list</Link></li>
+        <li><Link to="/gather">/gather</Link></li>
       </ul>
       <Routes />
       {devTools}
