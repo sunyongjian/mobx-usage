@@ -13,6 +13,9 @@ class ListStore {
     },
     dataSource: [],
   }
+  @computed get total() {
+    return this.list.dataSource.length;
+  }
 
   @action toggleLoading = () => {
     this.list.loading = !this.list.loading;

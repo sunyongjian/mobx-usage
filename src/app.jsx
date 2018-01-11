@@ -10,11 +10,12 @@ const App = () => {
   }
   return (
     <div>
-      <ul>
-        <li><Link to="/">/</Link></li>
-        <li><Link to="/auto">/auto</Link></li>
-        <li><Link to="/list">/list</Link></li>
-        <li><Link to="/gather">/gather</Link></li>
+      <ul style={{ width: 400, margin: '20px auto', display: 'flex', justifyContent: 'space-between' }}>
+        <li><Link to="/">count</Link></li>
+        <li><Link to="/auto">autoRun</Link></li>
+        <li><Link to="/list">list</Link></li>
+        <li><Link to="/school">school</Link></li>
+        <li><Link to="/gather">gather</Link></li>
       </ul>
       <Routes />
       {devTools}
