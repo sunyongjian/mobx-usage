@@ -10,12 +10,17 @@ export default class Auto extends React.Component {
     this.isError = !this.isError;
   };
 
+  // shouldComponentUpdate(a) {
+  //   console.log(a, 'aa');
+  // }
+
   componentDidMount() {
     const disposer = autorun(() => {
       if (this.isError) {
-        notification.error({
+        notification.success({
           message: 'autoRun 执行了',
         });
+        this.forceUpdate();
         setTimeout(() => {
           disposer();// 销毁 autorun
           notification.error({
@@ -35,6 +40,7 @@ export default class Auto extends React.Component {
   render() {
     return (
       <div>
+        {`${this.isError}`}
         <Button onClick={this.handleClick}>操作</Button>
       </div>
     );

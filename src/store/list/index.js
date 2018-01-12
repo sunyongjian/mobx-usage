@@ -31,6 +31,9 @@ class ListStore {
   }
 
   @action fetchList = async (query) => {
+    // action('toggleLoading', () => {
+    //   this.list.loading = !this.list.loading;
+    // })();
     this.toggleLoading();
     const result = await axios({
       method: 'get',
